@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import api from "../api/api";
 import "../styles/ProductList.scss";
 import { ProductRow } from "./ProductRow";
+
+
+
 export const ProductList = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -36,7 +39,7 @@ export const ProductList = () => {
     return <p>{error}</p>;
   }
   return (
-    <table>
+    <table className="ProductList">
       <thead>
         <tr>
           <th>Referencia</th>

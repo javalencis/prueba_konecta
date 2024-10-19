@@ -1,13 +1,13 @@
-import { ProductList } from "../components/ProductList"
-
+import { ProductList } from "../components/ProductList";
+import '../styles/Product.scss'
 export const Products = () => {
   return (
-    <>
+    <section className="Products">
       <h2>Productos</h2>
-      <div>
-        <button>Agregar Producto</button>
-      </div>
-      <ProductList/>
-    </>
-  )
-}
+
+      <button className="Products--BtAdd">Agregar Producto</button>
+
+      <ProductList />
+    </section>
+  );
+};
