@@ -2,7 +2,9 @@ import PropTypes from "prop-types";
 import api from "../api/api";
 import "../styles/DeleteProduct.scss";
 import { useState } from "react";
+import { useGlobalContext } from "../hooks/useGlobalContext";
 export const DeleteProduct = ({ setOpenModalDeleteProduct, productId }) => {
+  const{refreshProductsList} = useGlobalContext();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(false);
   const handleDeleteProduct = async () => {
@@ -11,6 +13,7 @@ export const DeleteProduct = ({ setOpenModalDeleteProduct, productId }) => {
       await api.delete(`/products/${productId}`);
       console.log(`Producto con ID ${productId} eliminado.`);
       setStatus(true);
+      refreshProductsList()
     } catch (error) {
       console.error("Error al eliminar el producto:", error);
     } finally {

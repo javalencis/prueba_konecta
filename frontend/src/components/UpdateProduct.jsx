@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import api from "../api/api";
 import "../styles/UpdateProduct.scss";
 import { useState } from "react";
+import { useGlobalContext } from "../hooks/useGlobalContext";
 
 export const UpdateProduct = ({ setOpenModalUpdateProduct, product }) => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm({
@@ -15,6 +16,7 @@ export const UpdateProduct = ({ setOpenModalUpdateProduct, product }) => {
       stock: product.stock,
     },
   });
+  const {refreshProductsList} = useGlobalContext();
 
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
@@ -30,6 +32,7 @@ export const UpdateProduct = ({ setOpenModalUpdateProduct, product }) => {
       setSuccessMessage("Producto actualizado exitosamente");
       reset(); 
       setStatus(true)
+      refreshProductsList()
     } catch (error) {
       setErrorMessage("Error al actualizar el producto. Intente nuevamente.");
       console.error("Error:", error);

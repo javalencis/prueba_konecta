@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import api from "../api/api";
+import { useGlobalContext } from "./useGlobalContext";
 
-export const useSales = (refreshSales) => {
+export const useSales = () => {
   const [sales, setSales] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  const { refreshSales } = useGlobalContext();
   const getSales = async () => {
     try {
       const res = await api.get("/sales");

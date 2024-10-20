@@ -2,10 +2,12 @@
 import "../styles/ProductList.scss";
 import { ProductRow } from "./ProductRow";
 import {useProducts} from '../hooks/useProducts.js'
+import { useGlobalContext } from "../hooks/useGlobalContext.js";
 
 
 export const ProductList = () => {
-  const { products, loading, error } = useProducts();
+  const {refreshProducts} =useGlobalContext()
+  const { products, loading, error } = useProducts(refreshProducts);
   if (loading) {
     return <p>Loading products...</p>;
   }

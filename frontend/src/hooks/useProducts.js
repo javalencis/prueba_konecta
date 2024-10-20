@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import api from "../api/api";
 
-export const useProducts = () => {
+export const useProducts = (refreshProducts) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   const getProducts = async () => {
     try {
       const res = await api.get("/products");
@@ -24,7 +23,8 @@ export const useProducts = () => {
 
   useEffect(() => {
     getProducts();
-  }, []);
+    console.log("1");
+  }, [refreshProducts]);
 
   return { products, loading, error }; // Devolver los estados necesarios
 };

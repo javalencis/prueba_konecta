@@ -3,8 +3,10 @@ import { useState } from "react";
 import api from "../api/api";
 import "../styles/AddProduct.scss";
 import PropTypes from "prop-types";
+import { useGlobalContext } from "../hooks/useGlobalContext";
 
 export const AddProduct = ({setOpenModalAddProduct}) => {
+  const {refreshProductsList}=useGlobalContext()
   const {
     register,
     handleSubmit,
@@ -22,6 +24,7 @@ export const AddProduct = ({setOpenModalAddProduct}) => {
       await api.post("/products", data);
       setSuccessMessage("Producto agregado exitosamente");
       reset();
+      refreshProductsList()
     } catch (error) {
       setErrorMessage("Error al agregar el producto. Intente nuevamente.");
       console.error("Error: ", error);

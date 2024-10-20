@@ -1,8 +1,7 @@
-import PropTypes from "prop-types";
 import { useSales } from "../hooks/useSales"
 
-export const SalesList = ({refreshSales}) => {
-  const {sales,loading,error} =  useSales(refreshSales)
+export const SalesList = () => {
+  const {sales,loading,error} =  useSales()
 
   if (loading) {
     return <p>Loading products...</p>;
@@ -36,7 +35,3 @@ export const SalesList = ({refreshSales}) => {
     </table>
   )
 }
-SalesList.propTypes = {
-    refreshSales: PropTypes.bool.isRequired, // Asume que es un booleano que activa la actualización
-  
-  };
