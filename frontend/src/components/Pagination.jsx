@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import iconBack from "../assets/back.png";
 import iconNext from "../assets/next.png";
+import '../styles/Pagination.scss'
 export const Pagination = ({
     currentPage,
     totalPages,

@@ -1,3 +1,5 @@
+@use './media-queries';
+
 .DeleteProduct {
     background-color: #ffffff;
     padding: 20px;
@@ -23,5 +25,12 @@
         &:hover {
             background-color: #ff0000;
         }
+    }
+}
+
+
+@include media-queries.table{
+    .DeleteProduct{
+       margin: auto 0;
     }
 }

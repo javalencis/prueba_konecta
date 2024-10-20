@@ -1,20 +1,7 @@
 @use './media-queries';
 
 
-.pagination{
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    button{
-        background: none;
-        border: none;
-        cursor: pointer;
-    }
-    img{
-        width: 20px;
-    }
-}
+
 .SalesList {
     background-color: #ffffff;
     margin-top: 24px;
