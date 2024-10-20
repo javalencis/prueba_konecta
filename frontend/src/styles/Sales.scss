@@ -1,0 +1,56 @@
+.Sales {
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+       
+
+
+        &>div {
+            display: flex;
+            gap: 32px;
+            
+            &>div {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                input {
+                    width: 72px;
+                    padding: 6px;
+                    font-size: 16px;
+                    text-align: center;
+                }
+
+                select {
+                    font-size: 16px;
+                    padding: 6px;
+                    width: fit-content;
+                }
+                p{
+                    font-size: 14px;
+                    color: #ff0000;
+                }
+            }
+        }
+
+        button {
+            width: fit-content;
+            border: none;
+            margin-top: 20px;
+            padding: 10px 14px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ff3f3f;
+            color: #ffffff;
+
+            &:hover {
+                background-color: #ff0000;
+            }
+
+        }
+
+    }
+}
