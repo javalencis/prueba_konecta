@@ -97,7 +97,7 @@ Para que el backend funcione correctamente, debes asegurarte de tener una base d
 
 1. Inicia PostgreSQL desde la terminal o desde pgAdmin 4:
    
-2. Crea la base de datos ```sql cafe_products_db``` o el nombre puesto en DB_NAME
+2. Crea la base de datos ```cafe_products_db``` o el nombre puesto en DB_NAME
   
 3. Asegúrate de que las credenciales y la base de datos en el archivo `.env` coincidan con las configuraciones de tu sistema.
 
