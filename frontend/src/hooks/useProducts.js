@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import api from "../api/api"; // Asegúrate de que la ruta sea correcta
+import api from "../api/api";
 
 export const useProducts = () => {
   const [products, setProducts] = useState([]);
