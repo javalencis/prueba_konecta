@@ -10,6 +10,7 @@ export const getProducts = async (req, res) => {
           [Op.gt]: 0,
         },
       },
+      order: [["createdAt", "DESC"]],
     });
     res.json(products);
   } catch (error) {
