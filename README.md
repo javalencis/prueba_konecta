@@ -104,5 +104,6 @@ Para que el backend funcione correctamente, debes asegurarte de tener una base d
 ### 5. Notas adicionales
 
 - Asegurar de que el backend esté corriendo antes de iniciar el frontend para que las peticiones a la API funcionen correctamente.
-- Puedes modificar las variables de entorno según sea necesario para ajustarlo a tu entorno local.
+- Las listas tienen paginación desde mas de 10 productos
+- Diseño responsive
 
