@@ -2,10 +2,15 @@ import PropTypes from "prop-types";
 import { LayoutModal } from "../containers/LayoutModal";
 import { DeleteProduct } from "./DeleteProduct";
 import { useState } from "react";
+import { UpdateProduct } from "./UpdateProduct";
 export const ProductRowData = ({ product }) => {
   const [openModalDeleteProduct, setOpenModalDeleteProduct] = useState(false);
+  const [openModalUpdateProduct, setOpenModalUpdateProduct] = useState(false);
   const handleDeleteProduct = () => {
     setOpenModalDeleteProduct((value) => !value);
+  };
+  const handleUpdateProduct = () => {
+    setOpenModalUpdateProduct((value) => !value);
   };
   return (
     <>
@@ -18,6 +23,7 @@ export const ProductRowData = ({ product }) => {
         <td>{product.stock}</td>
         <td>
           <button onClick={handleDeleteProduct}>X</button>
+          <button onClick={handleUpdateProduct}>E</button>
         </td>
       </tr>
       {openModalDeleteProduct && (
@@ -25,6 +31,14 @@ export const ProductRowData = ({ product }) => {
           <DeleteProduct
             setOpenModalDeleteProduct={setOpenModalDeleteProduct}
             productId={product.id}
+          />
+        </LayoutModal>
+      )}
+      {openModalUpdateProduct && (
+        <LayoutModal setOpenModal={setOpenModalUpdateProduct}>
+          <UpdateProduct
+            setOpenModalUpdateProduct={setOpenModalUpdateProduct}
+            product={product}
           />
         </LayoutModal>
       )}
