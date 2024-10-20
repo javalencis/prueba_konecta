@@ -23,7 +23,6 @@ export const useProducts = (refreshProducts) => {
 
   useEffect(() => {
     getProducts();
-    console.log("1");
   }, [refreshProducts]);
 
   return { products, loading, error }; // Devolver los estados necesarios
