@@ -1,4 +1,4 @@
-@import './media-queries';
+@use './media-queries';
 
 .SalesList{
     margin-top: 24px;
@@ -11,7 +11,7 @@
         padding: 8px 50px 4px 0;
     }
 }
-@include table {
+@include media-queries.table {
     .SalesListContainer {
         overflow-x: auto;
         .SalesList{
@@ -45,7 +45,7 @@
 
 }
 
-@include mobile {
+@include media-queries.mobile {
     .SalesList {
         thead {
             display: none;

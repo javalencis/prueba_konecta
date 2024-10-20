@@ -1,4 +1,4 @@
-@import './media-queries';
+@use './media-queries';
 .HeaderMobile{
     display: none;
     background-color: #000000;
@@ -32,7 +32,7 @@
 
 }
 
-@include table{
+@include media-queries.table{
     .HeaderMobile{
         display: block;
     }

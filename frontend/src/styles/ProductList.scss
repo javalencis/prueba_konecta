@@ -1,4 +1,4 @@
-@import './media-queries';
+@use './media-queries';
 
 .ProductList {
     background-color: #ffffff;
@@ -30,7 +30,7 @@
     }
 }
 
-@include table {
+@include media-queries.table {
     .ProductListContainer {
         overflow-x: auto;
 
@@ -62,7 +62,7 @@
 
 }
 
-@include mobile {
+@include media-queries.mobile {
     .ProductList {
         thead {
             display: none;

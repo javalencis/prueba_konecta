@@ -1,4 +1,4 @@
-@import './media-queries';
+@use './media-queries';
 
 .ContentPage{
     padding: 20px;
@@ -6,7 +6,7 @@
     max-width: fit-content;
 }
 
-@include table{
+@include media-queries.table{
     .ContentPage{
         margin-left: 0;
         min-width: 100%;

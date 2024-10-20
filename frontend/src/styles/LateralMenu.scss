@@ -1,4 +1,4 @@
-@import './media-queries';
+@use './media-queries';
 
 .LateralMenu{
     position: fixed;
@@ -30,7 +30,7 @@
     }
    
 }
-@include table{
+@include media-queries.table{
     .LateralMenu{
         left: -300px;
         transition: all 2s ease;
