@@ -1,25 +1,122 @@
-.ProductList{
+@import './media-queries';
+
+.ProductList {
     background-color: #ffffff;
     width: 100%;
     max-width: 1024px;
-    th{
+
+    th {
         text-align: left;
         padding-right: 40px;
         font-size: 18px;
     }
-    td{
-      
+
+    td {
+
         padding: 8px 50px 4px 0;
     }
-    .btsProductRow{
+
+    .btsProductRow {
         display: flex;
         align-items: center;
         gap: 16px;
-        button{
+
+        button {
 
             border: none;
             background: none;
             cursor: pointer;
+        }
+    }
+}
+
+@include table {
+    .ProductListContainer {
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #888;
+   
+            border-radius: 10px;
+
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background-color: #555;
+          
+        }
+
+        &::-webkit-scrollbar-thumb:active {
+            background-color: #333;
+
+        }
+    }
+
+}
+
+@include mobile {
+    .ProductList {
+        thead {
+            display: none;
+        }
+
+        tbody {
+            tr {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                border-bottom: 1px solid #bebebe;
+                margin-bottom: 16px;
+                padding-bottom: 5px;
+
+                td {
+                    &:nth-child(1) {
+                        font-weight: bold;
+                        font-size: 14px;
+
+                    }
+
+                    &:nth-child(2) {
+                        font-size: 20px;
+                    }
+
+                    &:nth-child(3) {
+                        &::before {
+                            content: 'Precio: ';
+                        }
+
+                    }
+
+                    &:nth-child(4) {
+                        &::before {
+                            content: 'Peso: ';
+                        }
+
+                    }
+
+                    &:nth-child(6) {
+                        &::before {
+                            content: 'Stock: ';
+                        }
+
+                    }
+
+                    &:last-child {
+                        position: absolute;
+
+                        right: 0;
+                    }
+                }
+            }
+
         }
     }
 }

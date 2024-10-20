@@ -1,8 +1,15 @@
 import { NavLink } from "react-router-dom";
 import "../styles/LateralMenu.scss";
-export const LateralMenu = () => {
+import PropTypes from "prop-types";
+export const LateralMenu = ({openMenuLateral,setOpenMenuLateral}) => {
+  const handleOpenMenuLateral = () =>{
+    setOpenMenuLateral(false)
+  }
   return (
-    <section className="LateralMenu">
+    <section className={openMenuLateral ? "LateralMenu open":"LateralMenu"}>
+      <button className="btClose" onClick={handleOpenMenuLateral}>
+        X
+      </button>
       <h1>Cafetería</h1>
       <nav>
         <NavLink to="/">Productos</NavLink>
@@ -10,4 +17,9 @@ export const LateralMenu = () => {
       </nav>
     </section>
   );
+};
+
+LateralMenu.propTypes = {
+  openMenuLateral: PropTypes.bool, 
+  setOpenMenuLateral: PropTypes.func, 
 };

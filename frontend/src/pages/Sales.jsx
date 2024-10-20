@@ -1,4 +1,4 @@
-import { useState } from "react";
+
 import { SalesForm } from "../components/SalesForm";
 import { SalesList } from "../components/SalesList";
 import "../styles/Sales.scss";

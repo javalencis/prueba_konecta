@@ -1,3 +1,5 @@
+@import './media-queries';
+
 .LateralMenu{
     position: fixed;
     height: 100%;
@@ -5,6 +7,7 @@
     
     background-color: #2C3E50;
     color: white;
+    z-index:100 ;
     nav{
         display: flex;
         flex-direction: column;
@@ -22,5 +25,30 @@
     a.active{
         background-color: #334457;
     }
+    .btClose{
+        display: none;
+    }
    
+}
+@include table{
+    .LateralMenu{
+        left: -300px;
+        transition: all 2s ease;
+        &.open{
+            left: 0;
+            top: 0;
+        }
+        .btClose{
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin: 16px;
+            border: none;
+            background: none;
+            color: #ffffff;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }
 }

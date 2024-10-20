@@ -1,5 +1,14 @@
+@import './media-queries';
+
 .ContentPage{
     padding: 20px;
     margin-left: 240px;
     max-width: fit-content;
+}
+
+@include table{
+    .ContentPage{
+        margin-left: 0;
+        min-width: 100%;
+    }
 }
