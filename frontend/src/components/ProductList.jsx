@@ -48,6 +48,7 @@ export const ProductList = () => {
           <th>Peso</th>
           <th>Categoría</th>
           <th>Stock</th>
+          <th>Opciones</th>
         </tr>
       </thead>
       <tbody>

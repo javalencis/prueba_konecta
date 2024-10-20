@@ -1,7 +1,7 @@
 import { ProductList } from "../components/ProductList";
 import "../styles/Product.scss";
 import { LayoutModal } from "../containers/LayoutModal";
-import { AddProduct } from "./AddProduct";
+import { AddProduct } from "../components/AddProduct";
 import { useState } from "react";
 export const Products = () => {
   const [openModalAddProduct, setOpenModalAddProduct] = useState(false);
@@ -22,7 +22,7 @@ export const Products = () => {
 
       <ProductList />
       {openModalAddProduct && (
-        <LayoutModal setOpenModalAddProduct={setOpenModalAddProduct}>
+        <LayoutModal setOpenModal={setOpenModalAddProduct}>
           <AddProduct setOpenModalAddProduct={setOpenModalAddProduct}/>
         </LayoutModal>
       )}

@@ -1,10 +1,14 @@
 .ProductList{
     background-color: #ffffff;
+    width: 100%;
+
     th{
         text-align: left;
         padding-right: 40px;
+        font-size: 18px;
     }
     td{
-        padding-right: 16px;
+      
+        padding: 8px 50px 4px 0;
     }
 }

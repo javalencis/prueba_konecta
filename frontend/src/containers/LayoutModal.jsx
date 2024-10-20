@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 import "../styles/LayoutModal.scss";
-export const LayoutModal = ({ children, setOpenModalAddProduct }) => {
+export const LayoutModal = ({ children, setOpenModal }) => {
   const handleCloseModalAddProduct = (event) => {
     if (event.target.className === "LayoutModal") {
-      setOpenModalAddProduct(false);
+      setOpenModal(false);
     }
   };
   return (
@@ -15,5 +15,5 @@ export const LayoutModal = ({ children, setOpenModalAddProduct }) => {
 
 LayoutModal.propTypes = {
   children: PropTypes.node.isRequired,
-  setOpenModalAddProduct: PropTypes.func.isRequired,
+  setOpenModal: PropTypes.func.isRequired,
 };
