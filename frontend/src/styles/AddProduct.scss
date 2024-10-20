@@ -1,0 +1,62 @@
+.AddProduct {
+    background-color: #ffffff;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+        .formPriceWeight{
+            display: flex;
+            width: 100%;
+            gap: 40px;
+        }
+        .successMessage{
+            color: #068a02;
+        }
+        label {
+            display: flex;
+            flex-direction: column;
+
+            span {
+                margin-bottom: 10px;
+            }
+
+            input {
+                max-width: fit-content;
+                padding: 8px;
+                font-size: 20px;
+            }
+            #price,
+            #stock,
+            #weight{
+          
+               width: 100px;
+            }
+            .error{
+                color: #ff0000;
+                font-size: 14px;
+            }
+        }
+        .formButtons{
+            button{
+                border: none;
+                margin-right: 10px;
+                padding: 12px 16px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+            .btAdd{
+                background-color: #ff3f3f;
+                color: #ffffff;
+                &:hover{
+                    background-color: #ff0000;
+                }
+            }
+        }
+    }
+}
