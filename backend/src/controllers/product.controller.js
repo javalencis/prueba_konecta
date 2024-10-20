@@ -1,4 +1,5 @@
 import { Product } from "../models/Product.js";
+import { Sale } from "../models/Sale.js";
 
 export const getProducts = async (req, res) => {
   try {
@@ -40,6 +41,11 @@ export const updateProducts = async (req, res) => {
 export const deleteProducts = async (req, res) => {
   const { id } = req.params;
   try {
+    await Sale.destroy({
+      where: {
+        productId: id,
+      },
+    });
     const productRemoved = await Product.destroy({
       where: {
         id,
