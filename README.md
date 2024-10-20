@@ -6,7 +6,7 @@ El proyecto está dividido en dos partes: el **backend** (API) y el **frontend**
 
 - [Node.js](https://nodejs.org/) 
 - [PostgreSQL](https://www.postgresql.org/) (instalado y configurado)
-- [NPM](https://www.npmjs.com/) o [Yarn](https://yarnpkg.com/)
+- [NPM](https://www.npmjs.com/)
 
 ## Instrucciones de instalación
 
