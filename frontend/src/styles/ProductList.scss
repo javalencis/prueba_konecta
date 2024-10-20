@@ -11,4 +11,15 @@
       
         padding: 8px 50px 4px 0;
     }
+    .btsProductRow{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        button{
+
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+    }
 }

@@ -3,6 +3,8 @@ import { LayoutModal } from "../containers/LayoutModal";
 import { DeleteProduct } from "./DeleteProduct";
 import { useState } from "react";
 import { UpdateProduct } from "./UpdateProduct";
+import iconEdit from '../assets/edit.png'
+import iconTrash from '../assets/trash.png'
 export const ProductRowData = ({ product }) => {
   const [openModalDeleteProduct, setOpenModalDeleteProduct] = useState(false);
   const [openModalUpdateProduct, setOpenModalUpdateProduct] = useState(false);
@@ -21,9 +23,9 @@ export const ProductRowData = ({ product }) => {
         <td>{product.weight}</td>
         <td>{product.category}</td>
         <td>{product.stock}</td>
-        <td>
-          <button onClick={handleDeleteProduct}>X</button>
-          <button onClick={handleUpdateProduct}>E</button>
+        <td className="btsProductRow">
+          <button onClick={handleUpdateProduct} title="Editar"><img src={iconEdit} alt="" /></button>
+          <button onClick={handleDeleteProduct} title="Eliminar"><img src={iconTrash} alt="" /></button>
         </td>
       </tr>
       {openModalDeleteProduct && (

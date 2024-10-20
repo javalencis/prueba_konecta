@@ -18,7 +18,7 @@
                 flex-direction: column;
                 gap: 10px;
                 input {
-                    width: 72px;
+                    width: 80px;
                     padding: 6px;
                     font-size: 16px;
                     text-align: center;
@@ -27,7 +27,7 @@
                 select {
                     font-size: 16px;
                     padding: 6px;
-                    width: fit-content;
+                    width: 240px;
                 }
                 p{
                     font-size: 14px;
@@ -35,11 +35,15 @@
                 }
             }
         }
-
+        .message{
+            margin-top: 5px;
+            color: #ff7300;
+            font-weight: bold;
+        }
         button {
             width: fit-content;
             border: none;
-            margin-top: 20px;
+            margin-top: 18px;
             padding: 10px 14px;
             font-size: 16px;
             cursor: pointer;

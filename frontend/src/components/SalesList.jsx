@@ -1,5 +1,5 @@
 import { useSales } from "../hooks/useSales"
-
+import '../styles/SalesList.scss'
 export const SalesList = () => {
   const {sales,loading,error} =  useSales()
 

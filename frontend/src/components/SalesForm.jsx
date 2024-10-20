@@ -5,7 +5,7 @@ import api from "../api/api";
 import { useGlobalContext } from "../hooks/useGlobalContext";
 
 export const SalesForm = () => {
-  const { refreshSalesList,refreshProducts } = useGlobalContext();
+  const { refreshSalesList,refreshProducts,refreshProductsList } = useGlobalContext();
   const { products, loading, error } = useProducts(refreshProducts);
   const {
     register,
@@ -32,9 +32,10 @@ export const SalesForm = () => {
         productId: selectedProduct.id,
         quantity,
       });
-      setMessage(`Venta exitosa.`);
+      setMessage("");
       reset();
       refreshSalesList();
+      refreshProductsList();
     } catch (error) {
       console.error("Error al realizar la venta:", error);
       setMessage("Error al realizar la venta. Intente nuevamente.");
@@ -51,7 +52,7 @@ export const SalesForm = () => {
     return <p>{error}</p>;
   }
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="sale">
       <div>
         <div>
           <label htmlFor="product">Producto:</label>
@@ -87,6 +88,7 @@ export const SalesForm = () => {
           )}
         </div>
       </div>
+      {message && <p className="message">{message}</p>}
       <button type="submit" disabled={loadingSale}>
         {loadingSale ? "Procesando venta..." : "Vender"}
       </button>

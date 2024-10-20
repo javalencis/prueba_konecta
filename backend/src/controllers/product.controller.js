@@ -1,9 +1,16 @@
+import { Op } from "sequelize";
 import { Product } from "../models/Product.js";
 import { Sale } from "../models/Sale.js";
 
 export const getProducts = async (req, res) => {
   try {
-    const products = await Product.findAll();
+    const products = await Product.findAll({
+      where: {
+        stock: {
+          [Op.gt]: 0,
+        },
+      },
+    });
     res.json(products);
   } catch (error) {
     res.status(500).json({ message: error.message });
