@@ -6,7 +6,7 @@ import { Pagination } from "./Pagination";
 export const SalesList = () => {
   const { sales, loading, error } = useSales();
   const [currentPage, setCurrentPage] = useState(1);
-  const salesPerPage = 5;
+  const salesPerPage = 10;
 
   const reversedSales = [...sales].reverse();
   const indexOfLastSale = currentPage * salesPerPage;
